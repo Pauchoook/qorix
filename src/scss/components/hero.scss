@@ -1,0 +1,168 @@
+.hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+  padding-top: 195px;
+  z-index: 1;
+  @include tablet {
+    padding-top: 150px;
+  }
+  &::before,
+  &::after {
+    position: absolute;
+    content: "";
+    z-index: -1;
+    border-radius: 100%;
+    background-color: rgba(216, 255, 58, 0.15);
+    filter: blur(150px);
+    width: 550px;
+    height: 550px;
+    @include tablet {
+      width: 285px;
+      height: 285px;
+    }
+  }
+  &::before {
+    left: -225px;
+    top: -25px;
+    @include tablet {
+      top: 30px;
+      left: -143px;
+    }
+  }
+  &::after {
+    right: 55px;
+    top: 310px;
+    @include tablet {
+      top: 435px;
+      right: -143px;
+    }
+  }
+  &__title {
+    max-width: 665px;
+    margin-bottom: 50px;
+    @include tablet {
+      margin-bottom: 40px;
+    }
+  }
+  &__content {
+    font-size: 20px;
+    line-height: 140%;
+    margin: 0;
+    max-width: 1295px;
+    @include tablet {
+      font-size: 16px;
+      line-height: 140%;
+    }
+  }
+  &__links {
+    border-radius: 50px 50px 0 0;
+    background-color: white;
+    color: black;
+    padding: 80px 0px 50px 0px;
+    margin-top: 80px;
+    @include tablet {
+      padding: 40px 0px 30px 0px;
+      border-radius: 30px 30px 0 0;
+      margin-top: 70px;
+    }
+  }
+  &__links-title {
+    margin-bottom: 40px;
+    @include tablet {
+      margin-bottom: 25px;
+    }
+  }
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 74px;
+    row-gap: 0px;
+    padding-top: 50px;
+    border-top: 1px solid rgba(0, 0, 0, 0.15);
+    @include laptop-min {
+      gap: 30px;
+      row-gap: 0px;
+    }
+    @include tablet {
+      padding-top: 30px;
+    }
+  }
+  &__item {
+    flex: 0 1 calc(50% - 37px);
+    @include laptop-min {
+      flex-basis: calc(50% - 15px);
+    }
+    @include tablet {
+      flex-basis: 100%;
+    }
+  }
+  &__btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 15px 0px;
+    font-size: 24px;
+    transition: color 0.2s ease;
+    @include laptop-min {
+      font-size: 20px;
+    }
+    @include tablet {
+      font-size: 18px;
+      padding: 10px 0px;
+    }
+    &::before {
+      position: absolute;
+      content: "";
+      right: 0;
+      bottom: 0;
+      left: 95px;
+      height: 1px;
+      background-color: rgba(0, 0, 0, 0.15);
+      @include tablet {
+        left: 85px;
+      }
+    }
+    @include hover {
+      color: var(--light-green);
+      .hero__btn-circle {
+        background-color: rgba(191, 231, 34, 0.1);
+      }
+      .hero__btn-arrow {
+        transform: rotate(0deg);
+      }
+    }
+  }
+  &__btn-circle {
+    @include flex-center;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin-right: 30px;
+    transition: background-color 0.2s ease;
+    @include tablet {
+      width: 52px;
+      height: 52px;
+    }
+  }
+  &__btn-icon {
+    width: 28px;
+    @include tablet {
+      width: 24px;
+    }
+  }
+  &__btn-arrow {
+    width: 28px;
+    height: 28px;
+    transform: rotate(-45deg);
+    margin-left: 15px;
+    transition: transform 0.2s ease;
+    @include tablet {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
